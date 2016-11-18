@@ -13,6 +13,10 @@ import (
     //"google.golang.org/appengine"
     //"google.golang.org/appengine/urlfetch"
 )
+
+type aiJSON struct {
+  Cnt string `json: cnt`
+}
 type exerciseJSON struct {
   Next string `json: next`
   Results []exercise `json: results`
@@ -75,13 +79,21 @@ type exercise struct{
    "what are exercises that work out",
    "how can i workout",
    "how can i work out",
+   "how can i train",
+   "what can i train using",
  }
  var case_3  = []string{"tell me exercises that train using",
    "which exercises train using",
    "how can i train using",
    "how can i workout my using",
-   "workouts using"}
- var case_5 = []string{"Show me images for"}
+   "workouts using",
+   "work outs using"}
+
+ var case_5 = []string{"image",
+    "pictures",
+    "photo",
+    "pic",
+    "img"}
  var case_6 = []string{"Does use ", "Is needed for "}
  var case_7 = []string{"Does train"}
  var case_8 = []string{"hi" , "hello", "greetings", "hey", "sup", "what's up", "howdy", "salam alaikom", "salam 3alaikom", "hallo", "bonjour"}
@@ -461,6 +473,20 @@ func GetMuscles(){
    fmt.Println("Muscles Done!")
  }
 
+ func GetScriptResponse(message string)(string){
+   message = strings.Replace(message, " ", "+", -1)
+   var obj aiJSON
+   url := "http://api.acobot.net/get?bid=413&key=3LQGr50kQPVmmR9x&uid=1234567890&msg=" + message;
+
+   resp := getJSON(url)
+   defer resp.Body.Close()
+   if err := json.NewDecoder(resp.Body).Decode(&obj); err != nil {
+
+   log.Println(err)
+   }
+   return obj.Cnt
+ }
+
 func GetExercises(){
 
   var obj exerciseJSON
@@ -559,8 +585,8 @@ func CaseMatch(message string) (string){
     return  result + "\n"
   }
 
-  return case_9[rand.Intn(len(case_9))]
-
+  // return case_9[rand.Intn(len(case_9))]
+  return GetScriptResponse(message)
 }
 
 func containsElement(s []int, e int) bool {
