@@ -204,7 +204,7 @@ func Case3(message string) (string){
         result += ex.Name + "\n" // + ex.Description
         for _,img := range exercises_img {
           if img.Exercise == ex.Id {
-            result += "<img src=\""+img.Image + "/>" +"\n"
+            result += "<img src=\""+img.Image + "\"/>" +"\n"
           }
         }
       }
@@ -256,7 +256,7 @@ func Case5(message string) (string){
      }
      if img.Exercise == exID {
        fmt.Printf("%s image found %d" , img.Image, exID)
-       result +=  "<img src=\""+img.Image + "/>" +"\n"
+       result +=  "<img src=\""+ img.Image + "\"/>" +"\n"
      }
    }
    fmt.Println("didn't find image")
