@@ -383,7 +383,7 @@ func Case8(message string)(string){
   input := []string{message}
   f := false
 
-  for _, q := range case_7 {
+  for _, q := range case_8 {
     fuzzyMatches := fuzzy.Find(q, input)
     if len(fuzzyMatches) != 0{
       f = true
