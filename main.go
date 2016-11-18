@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
-//	"os"
+	"os"
 //	"strings"
 	"github.com/FaTerminator/chatbot"
 	"github.com/FaTerminator/fitify"
@@ -29,11 +29,11 @@ func main() {
 	chatbot.ProcessFunc(chatbotProcess)
 
 	//Use the PORT environment variable
-	//port := os.Getenv("PORT")
+	port := os.Getenv("PORT")
 	// Default to 3000 if no PORT environment variable was defined
-//	if port == "" {
-		port := "8080"
-//	}
+	if port == "" {
+		port = "8080"
+	}
 
 	// Start the server
 	fmt.Printf("Listening on port %s...\n", port)
