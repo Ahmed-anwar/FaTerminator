@@ -91,7 +91,7 @@ func Case1(message string) (string){
    input := []string{message}
    f := false
    for _,q := range case_1 {
-     fuzzyMatches := fuzzy.Find(q, input)
+     fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
      if len(fuzzyMatches) !=0 {
        f = true
      }
@@ -128,7 +128,7 @@ func Case2(message string) (string){
    input := []string{message}
    f := false
    for _,q := range case_2 {
-     fuzzyMatches := fuzzy.Find(q, input)
+     fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
      if len(fuzzyMatches) !=0 {
        f = true
      }
@@ -165,7 +165,7 @@ func Case3(message string) (string){
    input := []string{message}
    f := false
    for _,q := range case_3 {
-     fuzzyMatches := fuzzy.Find(q, input)
+     fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
      if len(fuzzyMatches) !=0 {
        f = true
      }
@@ -220,7 +220,7 @@ func Case5(message string) (string){
    var result string
    f := false
    for _, q := range case_5 {
-     fuzzyMatches := fuzzy.Find(q, input)
+     fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
      if len(fuzzyMatches) != 0{
        f = true
      }
@@ -269,7 +269,7 @@ func Case6(message string) (string){
    f := false
 
    for _, q := range case_6 {
-     fuzzyMatches := fuzzy.Find(q, input)
+     fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
      if len(fuzzyMatches) != 0{
        f = true
      }
@@ -327,7 +327,7 @@ func Case7(message string) (string){
    f := false
 
    for _, q := range case_7 {
-     fuzzyMatches := fuzzy.Find(q, input)
+     fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
      if len(fuzzyMatches) != 0{
        f = true
      }
@@ -384,7 +384,7 @@ func Case8(message string)(string){
   f := false
 
   for _, q := range case_8 {
-    fuzzyMatches := fuzzy.Find(q, input)
+    fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
     if len(fuzzyMatches) != 0{
       f = true
     }
@@ -528,6 +528,8 @@ func api(w http.ResponseWriter, r *http.Request) {
 }
 
 func CaseMatch(message string) (string){
+  message = strings.ToLower(message)
+
   var result string
   result = Case3(message)
   if result != "err"{
@@ -571,6 +573,9 @@ func containsElement(s []int, e int) bool {
     return false
 }
 
+func containsIgnoreCase(str1 string, str2 string) (bool){
+  return strings.Contains(strings.ToLower(str1), strings.ToLower(str2))
+}
 
 // func main() {
 //     http.HandleFunc("/", home) // setting router rule
