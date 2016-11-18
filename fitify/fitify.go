@@ -317,11 +317,11 @@ func Case6(message string) (string){
    for _,eq := range exer.Equipment{
      fmt.Printf("is %d == %d ?\n" , eq , eqID)
      if eqID == eq {
-       return "YES!"
+       return "Yes, in some variations of" + exer.Name
      }
    }
 
-   return "NO"
+   return "Nope."
  }
 
 func Case7(message string) (string){
@@ -375,10 +375,10 @@ func Case7(message string) (string){
    }
 
   if mID != -1 && exer.Category == mus.Id{
-    return "YES"
+    return "Yes."
   }
 
-   return "NO"
+   return "No."
  }
 
 func Case8(message string)(string){
