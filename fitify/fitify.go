@@ -227,20 +227,20 @@ func Case3(message string) (string){
  }
 
 func Case5(message string) (string){
-  //  input := []string{message}
+   input := []string{message}
    var result string
-  //  f := false
-  //  for _, q := range case_5 {
-  //    fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
-  //    if len(fuzzyMatches) != 0{
-  //      f = true
-  //    }
-  //  }
-   //
-  //  if !f {
-  //    fmt.Println("flag is false")
-  //    return "err"
-  //  }
+   f := false
+   for _, q := range case_5 {
+     fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
+     if len(fuzzyMatches) != 0{
+       f = true
+     }
+   }
+
+   if !f {
+     fmt.Println("flag is false")
+     return "err"
+   }
    exID := -1
 
    for _, ex := range exercises{
