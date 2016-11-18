@@ -100,18 +100,18 @@ type exercise struct{
  var case_9 = []string{"I'm not really sure how to answer that", "I'm not sure", "I don't understand what you mean", "Try asking that another way"}
 
 func Case1(message string) (string){
-   input := []string{message}
-   f := false
-   for _,q := range case_1 {
-     fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
-     if len(fuzzyMatches) !=0 {
-       f = true
-     }
-   }
-   if !f {
-     fmt.Println("fail no matches")
-     return "err"
-   }
+  //  input := []string{message}
+  //  f := false
+  //  for _,q := range case_1 {
+  //    fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
+  //    if len(fuzzyMatches) !=0 {
+  //      f = true
+  //    }
+  //  }
+  //  if !f {
+  //    fmt.Println("fail no matches")
+  //    return "err"
+  //  }
 
       equipmentID := -1
     for _,eq := range equipments {
@@ -137,18 +137,18 @@ func Case1(message string) (string){
  }
 
 func Case2(message string) (string){
-   input := []string{message}
-   f := false
-   for _,q := range case_2 {
-     fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
-     if len(fuzzyMatches) !=0 {
-       f = true
-     }
-   }
-   if !f {
-     fmt.Println("fail no matches")
-     return "err"
-   }
+  //  input := []string{message}
+  //  f := false
+  //  for _,q := range case_2 {
+  //    fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
+  //    if len(fuzzyMatches) !=0 {
+  //      f = true
+  //    }
+  //  }
+  //  if !f {
+  //    fmt.Println("fail no matches")
+  //    return "err"
+  //  }
 
        muscleID := -1
    for _,m := range muscles {
@@ -174,18 +174,18 @@ func Case2(message string) (string){
  }
 
 func Case3(message string) (string){
-   input := []string{message}
-   f := false
-   for _,q := range case_3 {
-     fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
-     if len(fuzzyMatches) !=0 {
-       f = true
-     }
-   }
-   if !f {
-     fmt.Println("fail no matches")
-     return "err"
-   }
+  //  input := []string{message}
+  //  f := false
+  //  for _,q := range case_3 {
+  //    fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
+  //    if len(fuzzyMatches) !=0 {
+  //      f = true
+  //    }
+  //  }
+  //  if !f {
+  //    fmt.Println("fail no matches")
+  //    return "err"
+  //  }
        muscleID := -1
    for _,m := range muscles {
      if containsIgnoreCase(message, m.Name){
@@ -227,20 +227,20 @@ func Case3(message string) (string){
  }
 
 func Case5(message string) (string){
-   input := []string{message}
+  //  input := []string{message}
    var result string
-   f := false
-   for _, q := range case_5 {
-     fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
-     if len(fuzzyMatches) != 0{
-       f = true
-     }
-   }
-
-   if !f {
-     fmt.Println("flag is false")
-     return "err"
-   }
+  //  f := false
+  //  for _, q := range case_5 {
+  //    fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
+  //    if len(fuzzyMatches) != 0{
+  //      f = true
+  //    }
+  //  }
+   //
+  //  if !f {
+  //    fmt.Println("flag is false")
+  //    return "err"
+  //  }
    exID := -1
 
    for _, ex := range exercises{
@@ -276,20 +276,20 @@ func Case5(message string) (string){
   }
 
 func Case6(message string) (string){
-   input := []string{message}
-   f := false
-
-   for _, q := range case_6 {
-     fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
-     if len(fuzzyMatches) != 0{
-       f = true
-     }
-   }
-
-   if !f {
-     fmt.Println("flag is false")
-     return "err"
-   }
+  //  input := []string{message}
+  //  f := false
+   //
+  //  for _, q := range case_6 {
+  //    fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
+  //    if len(fuzzyMatches) != 0{
+  //      f = true
+  //    }
+  //  }
+   //
+  //  if !f {
+  //    fmt.Println("flag is false")
+  //    return "err"
+  //  }
 
    exID := -1
    var exer exercise
@@ -334,20 +334,20 @@ func Case6(message string) (string){
  }
 
 func Case7(message string) (string){
-   input := []string{message}
-   f := false
-
-   for _, q := range case_7 {
-     fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
-     if len(fuzzyMatches) != 0{
-       f = true
-     }
-   }
-
-   if !f {
-     fmt.Println("flag is false")
-     return "err"
-   }
+  //  input := []string{message}
+  //  f := false
+   //
+  //  for _, q := range case_7 {
+  //    fuzzyMatches := fuzzy.Find(strings.ToLower(q), input)
+  //    if len(fuzzyMatches) != 0{
+  //      f = true
+  //    }
+  //  }
+   //
+  //  if !f {
+  //    fmt.Println("flag is false")
+  //    return "err"
+  //  }
 
    exID := -1
    var exer exercise
