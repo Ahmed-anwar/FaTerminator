@@ -25,7 +25,7 @@ func main() {
 	fitify.GetImages()
 	fitify.GetExercises()
 
-	chatbot.WelcomeMessage = "Hey Hazoma"
+	chatbot.WelcomeMessage = "Welcome to Fitify.\nYou can ask me about:\n-Which exercises train a certain muscle\n-What exercises can be done using certain equipment"
 	chatbot.ProcessFunc(chatbotProcess)
 
 	//Use the PORT environment variable

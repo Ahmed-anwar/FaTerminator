@@ -85,6 +85,7 @@ type exercise struct{
  var case_6 = []string{"Does use ", "Is needed for "}
  var case_7 = []string{"Does train"}
  var case_8 = []string{"hi" , "hello", "greetings", "hey", "sup", "what's up", "howdy", "salam alaikom", "salam 3alaikom", "hallo", "bonjour"}
+ var case_9 = []string{"I'm not really sure how to answer that", "I'm not sure", "I don't understand what you mean", "Try asking that another way"}
 
 func Case1(message string) (string){
    input := []string{message}
@@ -552,7 +553,12 @@ func CaseMatch(message string) (string){
   if result != "err"{
     return  result + "\n"
   }
-  return "err"
+  result = Case8(message)
+  if result != "err"{
+    return  result + "\n"
+  }
+
+  return case_9[rand.Intn(len(case_9))]
 
 }
 
