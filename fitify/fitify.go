@@ -580,10 +580,10 @@ func CaseMatch(message string) (string){
   if result != "err"{
     return  result + "\n"
   }
-  result = Case8(message)
-  if result != "err"{
-    return  result + "\n"
-  }
+  // result = Case8(message)
+  // if result != "err"{
+  //   return  result + "\n"
+  // }
 
   // return case_9[rand.Intn(len(case_9))]
   return GetScriptResponse(message)
