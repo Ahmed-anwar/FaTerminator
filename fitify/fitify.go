@@ -8,6 +8,7 @@ import (
     "net/http"
     "github.com/renstrom/fuzzysearch/fuzzy"
     "strings"
+    "math/rand"
     //"net/url"
     //"google.golang.org/appengine"
     //"google.golang.org/appengine/urlfetch"
@@ -83,6 +84,7 @@ type exercise struct{
  var case_5 = []string{"Show me images for"}
  var case_6 = []string{"Does use ", "Is needed for "}
  var case_7 = []string{"Does train"}
+ var case_8 = []string{"hi" , "hello", "greetings", "hey", "sup", "what's up", "howdy", "salam alaikom", "salam 3alaikom", "hallo", "bonjour"}
 
 func Case1(message string) (string){
    input := []string{message}
@@ -375,6 +377,24 @@ func Case7(message string) (string){
 
    return "NO"
  }
+
+func Case8(message string)(string){
+  input := []string{message}
+  f := false
+
+  for _, q := range case_7 {
+    fuzzyMatches := fuzzy.Find(q, input)
+    if len(fuzzyMatches) != 0{
+      f = true
+    }
+  }
+
+  if !f {
+    fmt.Println("flag is false")
+    return "err"
+  }
+  return case_8[rand.Intn(len(case_8))]
+}
 
 func GetImages(){
 
