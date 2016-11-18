@@ -32,7 +32,7 @@ func main() {
 	//port := os.Getenv("PORT")
 	// Default to 3000 if no PORT environment variable was defined
 //	if port == "" {
-		port := "80"
+		port := "8080"
 //	}
 
 	// Start the server
