@@ -103,7 +103,7 @@ func Case1(message string) (string){
 
       equipmentID := -1
     for _,eq := range equipments {
-      if strings.Contains(message, eq.Name){
+      if containsIgnoreCase(message, eq.Name){
           equipmentID = eq.Id
         }
       }
@@ -140,7 +140,7 @@ func Case2(message string) (string){
 
        muscleID := -1
    for _,m := range muscles {
-     if strings.Contains(message, m.Name){
+     if containsIgnoreCase(message, m.Name){
        muscleID = m.Id
      }
    }
@@ -176,7 +176,7 @@ func Case3(message string) (string){
    }
        muscleID := -1
    for _,m := range muscles {
-     if strings.Contains(message, m.Name){
+     if containsIgnoreCase(message, m.Name){
        muscleID = m.Id
      }
    }
@@ -186,7 +186,7 @@ func Case3(message string) (string){
    }
       equipmentID := -1
     for _,eq := range equipments {
-      if strings.Contains(message, eq.Name){
+      if containsIgnoreCase(message, eq.Name){
           equipmentID = eq.Id
         }
       }
@@ -214,7 +214,6 @@ func Case3(message string) (string){
     return result
  }
 
-
 func Case5(message string) (string){
    input := []string{message}
    var result string
@@ -236,7 +235,7 @@ func Case5(message string) (string){
      if ex.Name == "" {
        continue
      }
-     if strings.Contains(message, ex.Name){
+     if containsIgnoreCase(message, ex.Name){
        exID = ex.Id
        fmt.Println("found exercise" + ex.Name)
        break;
@@ -286,7 +285,7 @@ func Case6(message string) (string){
      if ex.Name == "" {
        continue
      }
-     if strings.Contains(message, ex.Name){
+     if containsIgnoreCase(message, ex.Name){
        exID = ex.Id
        exer = ex
        fmt.Println("found exercise" + ex.Name)
@@ -304,7 +303,7 @@ func Case6(message string) (string){
      if eq.Name == ""{
        continue
      }
-     if strings.Contains(message, eq.Name){
+     if containsIgnoreCase(message, eq.Name){
        fmt.Println("equipment found")
        eqID = eq.Id
        break
@@ -344,7 +343,7 @@ func Case7(message string) (string){
      if ex.Name == "" {
        continue
      }
-     if strings.Contains(message, ex.Name){
+     if containsIgnoreCase(message, ex.Name){
        exID = ex.Id
        exer = ex
        fmt.Println("found exercise" + ex.Name)
@@ -363,7 +362,7 @@ func Case7(message string) (string){
      if m.Name == ""{
        continue
      }
-     if strings.Contains(message, m.Name){
+     if containsIgnoreCase(message, m.Name){
        fmt.Println("muscle found")
        mID = m.Id
        mus = m
