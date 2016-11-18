@@ -3,15 +3,11 @@ package fitify
 import (
     "encoding/json"
     "fmt"
-    "html/template"
     "log"
     "net/http"
     "github.com/renstrom/fuzzysearch/fuzzy"
     "strings"
     "math/rand"
-    //"net/url"
-    //"google.golang.org/appengine"
-    //"google.golang.org/appengine/urlfetch"
 )
 
 type aiJSON struct {
@@ -58,11 +54,6 @@ type exercise struct{
  var muscles []muscle = make([]muscle,500,500)
  var equipments []equipment = make([]equipment,500,500)
  var exercises_img []exercise_img = make([]exercise_img,500,500)
-
- // case_1 := []string{"tell me exercises using"}
- // case_2 := []string{"tell me exercises"}
- // case_3 := []string{"what the hell?"}
- //
 
  var case_1  = []string{"tell me exercises that use",
    "tell me exercises using",
@@ -406,7 +397,7 @@ func Case8(message string)(string){
     return "err"
   }
   return case_8[rand.Intn(len(case_8))]
-}
+  }
 
 func GetImages(){
 
@@ -508,7 +499,7 @@ func GetExercises(){
       url = obj.Next
   }
   fmt.Println("Exercises Done!")
-}
+  }
 
 func getJSON(inputUrl string) (*http.Response) {
   url := fmt.Sprintf(inputUrl)
@@ -526,31 +517,7 @@ func getJSON(inputUrl string) (*http.Response) {
 
   return resp
 
-}
-
-func home(w http.ResponseWriter, r *http.Request) {
-    // var resultObj obj
-    // url := "https://wger.de/api/v2/exercise/?language=2"
-    // resultObj = getJSON(url);
-    // for _, x := range resultObj.Results {
-    //   fmt.Fprintf(w, "%v \n", x.Name)
-    // }
-
-    //fmt.Fprintf(w, "<h1>Welcome to the servers bitches</h1>") // write data to response
-}
-
-func api(w http.ResponseWriter, r *http.Request) {
-    fmt.Println("method:", r.Method) //get request method
-    if r.Method == "GET" {
-        t, _ := template.ParseFiles("welcome.html")
-        t.Execute(w, nil)
-    } else {
-        r.ParseForm()
-        // logic part of log in
-        fmt.Fprintf(w, r.Form["username"][0])
-
-    }
-}
+  }
 
 func CaseMatch(message string) (string){
   message = strings.ToLower(message)
@@ -587,7 +554,7 @@ func CaseMatch(message string) (string){
 
   // return case_9[rand.Intn(len(case_9))]
   return GetScriptResponse(message)
-}
+  }
 
 func containsElement(s []int, e int) bool {
     for _, a := range s {
@@ -596,31 +563,8 @@ func containsElement(s []int, e int) bool {
         }
     }
     return false
-}
+  }
 
 func containsIgnoreCase(str1 string, str2 string) (bool){
   return strings.Contains(strings.ToLower(str1), strings.ToLower(str2))
-}
-
-// func main() {
-//     http.HandleFunc("/", home) // setting router rule
-//     http.HandleFunc("/api", api)
-//     	fmt.Printf("Listening on port %d...\n", 3000)
-//       getMuscles()
-//       getEquipments()
-//       getImages()
-//       getExercises()
-//
-//       for true {
-//         fmt.Println("Hello, how can I help you?")
-//         reader := bufio.NewReader(os.Stdin)
-//         message, _ := reader.ReadString('\n')
-//         fmt.Println("Scanned message = " + message)
-//         fmt.Println(caseMatch(message))
-//       }
-//
-//     err := http.ListenAndServe(":3001", nil) // setting listening port
-//     if err != nil {
-//         log.Fatal("ListenAndServe: ", err)
-//     }
-// }
+  }
