@@ -118,7 +118,7 @@ func Case1(message string) (string){
       result := ""
     for _,ex := range exercises{
       if containsElement(ex.Equipment, equipmentID) {
-        result += ex.Name + "\n" // + ex.Description
+        result += ex.Name + ", \n" // + ex.Description
       }
     }
     if result == ""{
@@ -155,7 +155,7 @@ func Case2(message string) (string){
       result := ""
     for _,ex := range exercises{
       if ex.Category == muscleID {
-        result += ex.Name + "\n" // + ex.Description
+        result += ex.Name + ", \n" // + ex.Description
       }
     }
     if result == ""{
@@ -201,7 +201,7 @@ func Case3(message string) (string){
 
     for _,ex := range exercises {
       if ex.Category == muscleID && containsElement(ex.Equipment, equipmentID) {
-        result += ex.Name + "\n" // + ex.Description
+        result += ex.Name + ", \n" // + ex.Description
         for _,img := range exercises_img {
           if img.Exercise == ex.Id {
             result += "<img src=\""+img.Image + "\" style=\"width:350px;height:200px;\"/>" +"\n"
