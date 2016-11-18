@@ -85,8 +85,8 @@ type exercise struct{
     "photo",
     "pic",
     "img"}
- var case_6 = []string{"Does use ", "Is needed for "}
- var case_7 = []string{"Does train"}
+ var case_6 = []string{"Does use ", "Is needed for ", "Are needed for "}
+ var case_7 = []string{"Does train", "Does workout ", "Does work out "}
  var case_8 = []string{"hi" , "hello", "greetings", "hey", "sup", "howdy", "salam alaikom", "salam 3alaikom", "hallo", "bonjour"}
  var case_9 = []string{"I'm not really sure how to answer that", "I'm not sure", "I don't understand what you mean", "Try asking that another way"}
 
