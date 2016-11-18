@@ -320,8 +320,10 @@ func Case6(message string) (string){
        return "Yes, in some variations of" + exer.Name
      }
    }
-
-   return "Nope."
+   if(eqID != -1){
+     return "Nope."
+   }
+   return "I'm not really sure"
  }
 
 func Case7(message string) (string){
@@ -361,6 +363,7 @@ func Case7(message string) (string){
 
    mID := -1
    var mus muscle
+
    for _, m := range muscles{
      if m.Name == ""{
        continue
@@ -377,8 +380,10 @@ func Case7(message string) (string){
   if mID != -1 && exer.Category == mus.Id{
     return "Yes."
   }
-
-   return "No."
+  if(mID != -1){
+    return "No."
+  }
+  return "I'm not really sure"
  }
 
 func Case8(message string)(string){
