@@ -2,5 +2,25 @@
 	"ImportPath": "github.com/FaTerminator",
 	"GoVersion": "go1.6",
 	"GodepVersion": "v75",
-	"Deps": []
+	"Deps": [
+		{
+			"ImportPath": "github.com/heppu/simple-cors",
+			"Rev": "0fcde90b1493492935885d754ed54c4e4a402618"
+		},
+		{
+			"ImportPath": "github.com/joho/godotenv",
+			"Comment": "v1-10-g4ed1339",
+			"Rev": "4ed13390c0acd2ff4e371e64d8b97c8954138243"
+		},
+		{
+			"ImportPath": "github.com/joho/godotenv/autoload",
+			"Comment": "v1-10-g4ed1339",
+			"Rev": "4ed13390c0acd2ff4e371e64d8b97c8954138243"
+		},
+		{
+			"ImportPath": "github.com/renstrom/fuzzysearch/fuzzy",
+			"Comment": "v1.0.0-2-g2d205ac",
+			"Rev": "2d205ac6ec17a839a94bdbfd16d2fa6c6dada2e0"
+		}
+	]
 }
